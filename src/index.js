@@ -1,17 +1,15 @@
 import Vue from "vue";
-import VueProjectTemplate from "./components/vue-project-template.vue";
-
-let NODE_ENV = env["NODE_ENV"];
+import SortCompare from "./components/sort-compare.vue";
 
 new Vue({
-    el : "#vue-project-template",
+    el : "#sort-compare",
     components : {
-        VueProjectTemplate
+        SortCompare
     },
     render : function (createElement) {
-        return createElement(VueProjectTemplate, {
+        return createElement(SortCompare, {
             props : {
-                ENVIRONMENT : NODE_ENV
+                "sortWorkerUrl" : "/js/sort-worker.js"
             }
         });
     }
