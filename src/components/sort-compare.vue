@@ -32,7 +32,8 @@
             <span v-if="isReady">{{ sortedArrayString }}</span>
         </p>
         <p class="info">
-            Sort the array above using each of the example sorting methods.
+            Sort the array above using each of the example sorting methods.  Sorting happens <em>on your computer</em>
+            so speeds may vary.
         </p>
         <div>
             <a 
@@ -163,7 +164,6 @@ export default {
                 method : "mergesort",
                 array : this.integerArray
             });
-            
             return deferred.promise;
         },
         testBublesort () {
@@ -200,7 +200,6 @@ export default {
                 method : "quicksort",
                 array : this.integerArray
             });
-            
             return deferred.promise;
         },
         testInsertionSort () {
@@ -266,8 +265,6 @@ export default {
     }
     label {
         font-weight: bold;
-    }
-    .results {
     }
     .array-size-indicator {
         font-weight: bold;
