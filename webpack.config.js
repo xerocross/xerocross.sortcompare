@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = [
     {
         entry : {
-            'index' : './src/index.js'
+            'sort-compare' : './src/index.js'
         },
         output : {
             path : path.resolve(__dirname, './dist'),
