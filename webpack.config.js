@@ -101,26 +101,5 @@ module.exports = [
                 })
             }),
         ],
-    },
-    // {
-    //     entry : {
-    //         'more-primes-worker' : './src/sort-worker.js',
-    //     },
-    //     output : {
-    //         path : path.resolve(__dirname, './public/js'),
-    //         publicPath : '/public/js',
-    //         filename : '[name].js',
-    //     },
-    //     module : {
-    //         rules : [
-    //             {
-    //                 test : /\.js$/,
-    //                 exclude : /node_modules/,
-    //                 use : {
-    //                     loader : 'babel-loader'
-    //                 }
-    //             },
-    //         ]
-    //     }
-    // }
+    }
 ]
