@@ -1,13 +1,11 @@
 <template>
     <div class="sort-compare">
-        <p>
-            Here we 
-            illustrate some of the inherent speed differences between
-            a few classic sorting algorithms.
+        <p class="info">
+            Select an array size to auto-generate a random array of integers.
         </p>
         <form @submit.prevent="">
             <label>
-                Select the size of the array: {{ size }}
+                Array Size
             </label>
             <input 
                 v-model="sliderVal" 
@@ -17,7 +15,10 @@
                 max="500"
             />
         </form>
-        <p>Test Array: <span v-if="!isReady">(building)</span></p>
+        <p class="array-size-indicator">
+            {{ size }}
+        </p>
+        <label>Test Array</label>
         <p 
             v-if="!isDone" 
             class="array-disp"
@@ -30,12 +31,17 @@
         >
             <span v-if="isReady">{{ sortedArrayString }}</span>
         </p>
+        <p class="info">
+            Sort the array above using each of the example sorting methods.
+        </p>
         <div>
             <a 
                 class="btn btn-primary sort-button" 
+                :disabled="isWorking || !isReady"
                 @click="sort"
             >{{ (!isReady || isWorking) ? 'working' : 'sort' }}</a>
         </div>
+        
         <div class="results">
             <table class="table">
                 <thead>
@@ -251,17 +257,41 @@ export default {
 <style lang="scss">
 .sort-compare {
     .array-disp {
-        height: 100px;
-        overflow: scroll;
-        margin-left: 10px;
-        margin-right: 10px;
+        height: 200px;
+        overflow-y: scroll;
+        overflow-x: hidden;
         border-style: solid;
+        border-width: 1px;
         border-color: rgb(37, 37, 37);
-
+    }
+    label {
+        font-weight: bold;
     }
     .results {
-        margin-left: 20px;
-        margin-right:20px;
+    }
+    .array-size-indicator {
+        font-weight: bold;
+        font-size: 120%;
+    }
+    .info {
+        font-size: 14pt;
+    }
+    .table {
+        margin-top: 10px;
+        thead {
+            border-style: solid;
+            border-top-style: solid;
+            border-width: 1px;
+            border-color: black;
+        }
+        td, thead tr th {
+            border-style: solid;
+            border-top-style: solid;
+            border-width: 1px;
+            border-color: black;
+            padding-left: 2em;
+        }
+
     }
 }
 </style>
