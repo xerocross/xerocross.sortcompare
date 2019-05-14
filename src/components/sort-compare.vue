@@ -9,7 +9,7 @@
             </label>
             <input 
                 v-model="sliderVal" 
-                class="size-slider"
+                class="size-slider form-control"
                 type="range" 
                 min="10"
                 max="500"
@@ -38,6 +38,7 @@
         <div>
             <a 
                 class="btn btn-primary sort-button" 
+                href="#"
                 :disabled="isWorking || !isReady"
                 @click="sort"
             >{{ (!isReady || isWorking) ? 'working' : 'sort' }}</a>
